@@ -1,0 +1,126 @@
+header, main, footer { padding-left: 0px; }
+
+@media only screen and (max-width: 992px) {
+  header, main, footer { padding-left: 0; }
+}
+
+@media only screen and (max-width: 600px) {
+  .force-center-on-small-only { text-align: center; }
+}
+
+.header { font-weight: 100; }
+
+/* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+.btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.waves-effect.waves-light {
+  /*The alpha value allows the text and background color
+ of the button to still show through. */
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.white-border { border: 3px solid white; }
+
+/* side navigation bar */
+.side-nav {
+  width: 240px;
+  background: #000;
+  color: white;
+}
+.side-nav.fixed li.active {
+  background: rgba(255,255,255,0.3);
+}
+.side-nav.fixed a { color: white; }
+.side-nav.fixed a:hover, .side-nav.fixed a:focus {
+  background: rgba(255,255,255,0.3);
+}
+.side-nav.fixed a i.material-icons {
+  color: white;
+  margin-left: 5px;
+}
+.side-nav.fixed a.social-icon {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: rgba(255,255,255,0.3);
+}
+.side-nav.fixed a.social-icon:hover, .side-nav.fixed a:focus {
+  background: rgba(0,0,0,0);
+}
+.side-nav.fixed a.social-icon i.fa:hover, .side-nav.fixed a.social-icon i.fa:focus {
+  color: rgba(255,255,255,1);
+}
+#side-nav-image-container {
+  margin-top: 50px;
+  text-align: center;
+}
+#side-nav-name-container {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+}
+#side-nav-social-container { margin-bottom: 40px; }
+
+#mobile-menu-container { height: 0px; }
+#mobile-menu {
+  margin-top: 20px;
+  color: white;
+}
+
+#bio_social_container {
+  margin-top: 30px;
+}
+
+/* table of content */
+.toc-wrapper { position: relative; margin-top: 42px; }
+.toc-wrapper.pin-bottom { margin-top: 84px; }
+.pin-top, .pin-bottom { position: relative; }
+.pinned { position: fixed !important; }
+
+/* footer */
+footer p { font-weight: lighter; }
+footer.page-footer { background-color: #333; }
+footer.page-footer .footer-copyright { background-color: rgba(0,0,0,0.1); }
+
+/* index */
+#index-banner {
+  background-image: url(../images/bg_hk_nightview_v3.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto 100%;
+  color: black;
+}
+#index-banner-glass {
+  padding: 50px 0 50px 0;
+  background-color: rgba(240,240,240,1);
+}
+#index-main { max-width: 900px; }
+
+.pub-entry.card.horizontal .card-image { padding: 10px; }
+.pub-entry.card.horizontal .card-image img { width: 200px; max-height: 150px; }
+.pub-entry.card.horizontal .card-content { padding-left: 10px; }
+.pub-entry.card.horizontal .card-action { padding: 10px 20px 10px 10px; font-weight: 400; }
+.pub-entry.card.horizontal .card-action a:not(.btn):not(.btn-large):not(.btn-floating) { color: #039be5; }
+
+.pub-entry p.title { font-weight: 500; }
+.pub-entry p.authors { margin-top: 0.5ex; font-size: small; }
+.pub-entry p.conference { margin-top: 0.5ex; font-size: small; font-style: italic; }
+.pub-entry.card.horizontal:hover {
+  box-shadow: 0 5px 10px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
