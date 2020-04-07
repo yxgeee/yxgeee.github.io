@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Allow: /sitemap.htm
-Sitemap: http://yxgeee.github.io/sitemap.xml

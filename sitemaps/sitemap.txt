@@ -1,7 +1,0 @@
-http://yxgeee.github.io/
-http://yxgeee.github.io/files/CV.pdf
-http://yxgeee.github.io/projects/sda.html
-http://yxgeee.github.io/projects/mmt.html
-http://yxgeee.github.io/projects/fdgan.html
-http://yxgeee.github.io/files/MMT-ICLR20.pdf
-http://yxgeee.github.io/files/fdgan_poster.pdf
