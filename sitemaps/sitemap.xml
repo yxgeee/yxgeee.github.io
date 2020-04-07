@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>http://yxgeee.github.io/</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>
+  <url>
+    <loc>http://yxgeee.github.io/files/CV.pdf</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>
+  <url>
+    <loc>http://yxgeee.github.io/projects/sda.html</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>
+  <url>
+    <loc>http://yxgeee.github.io/projects/mmt.html</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>
+  <url>
+    <loc>http://yxgeee.github.io/projects/fdgan.html</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>
+  <url>
+    <loc>http://yxgeee.github.io/files/MMT-ICLR20.pdf</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>
+  <url>
+    <loc>http://yxgeee.github.io/files/fdgan_poster.pdf</loc>
+    <lastmod>2020-04-07</lastmod>
+  </url>
+</urlset>
+<!--<guid value="3285440f-0707-4680-b6f2-3a445c16e16f" />-->
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->

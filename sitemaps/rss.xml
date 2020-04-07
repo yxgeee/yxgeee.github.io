@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<rss version="2.0">
+  <channel>
+    <title>Yixiao Ge's Homepage</title>
+    <link>http://yxgeee.github.io</link>
+    <description />
+    <item>
+      <guid>http://yxgeee.github.io/</guid>
+      <title>Yixiao Ge's Homepage</title>
+      <link>http://yxgeee.github.io/</link>
+      <description>Personal homepage for Yixiao GE</description>
+      <pubDate>Tue, 07 Apr 2020 09:48:00 Z</pubDate>
+    </item>
+    <item>
+      <guid>http://yxgeee.github.io/files/CV.pdf</guid>
+      <title>CV.pdf</title>
+      <link>http://yxgeee.github.io/files/CV.pdf</link>
+      <description />
+      <pubDate>Tue, 07 Apr 2020 09:48:00 Z</pubDate>
+    </item>
+    <item>
+      <guid>http://yxgeee.github.io/projects/sda.html</guid>
+      <title>Structured Domain Adaptation </title>
+      <link>http://yxgeee.github.io/projects/sda.html</link>
+      <description>Unsupervised domain adaptation (UDA) aims at adapting the model trained on a labeled source-domain dataset to another target-domain dataset without any annotation. The task of UDA for the open-set person re-identification (re-ID) is even more challenging as the identities (classes) have no overlap between the two domains. Existing UDA methods for person re-ID have the following limitations. 1) Pseudo-label-based methods achieve state-of-the-art performances but ignore the complex relations between two domains' images, along with the valuable source-domain annotations. 2) Domain translation-based methods cannot achieve competitive performances as the domain translation is not properly regularized to generate informative enough training samples that well maintain inter-sample relations. To tackle the above challenges, we propose an end-to-end structured domain adaptation framework that consists of a novel structured domain-translation network and two domain-specific person image encoders. The structured domain-translation network can effectively transform the source-domain images into the target domain while well preserving the original intra- and inter-identity relations. The target-domain encoder could then be trained using both source-to-target translated images with valuable ground-truth labels and target-domain images with pseudo labels. Importantly, the domain-translation network and target-domain encoder are jointly optimized, improving each other towards the overall objective, i.e. to achieve optimal re-ID performances on the target domain. Our proposed framework outperforms state-of-the-art methods on multiple UDA tasks of person re-ID.</description>
+      <pubDate>Tue, 07 Apr 2020 09:48:00 Z</pubDate>
+    </item>
+    <item>
+      <guid>http://yxgeee.github.io/projects/mmt.html</guid>
+      <title>Mutual Mean-Teaching: Pseudo Label Refinery for</title>
+      <link>http://yxgeee.github.io/projects/mmt.html</link>
+      <description>Person re-identification (re-ID) aims at identifying the same persons' images across different cameras. However, domain diversities between different datasets pose an evident challenge for adapting the re-ID model trained on one dataset to another one. State-of-the-art unsupervised domain adaptation methods for person re-ID transferred the learned knowledge from the source domain by optimizing with pseudo labels created by clustering algorithms on the target domain. Although they achieved state-of-the-art performances, the inevitable label noise caused by the clustering procedure was ignored. Such noisy pseudo labels substantially hinders the model's capability on further improving feature representations on the target domain. In order to mitigate the effects of noisy pseudo labels, we propose to softly refine the pseudo labels in the target domain by proposing an unsupervised framework, Mutual Mean-Teaching (MMT), to learn better features from the target domain via off-line refined hard pseudo labels and on-line refined soft pseudo labels in an alternative training manner.  In addition, the common practice is to adopt both the classification loss and the triplet loss jointly for achieving optimal performances in person re-ID models. However, conventional triplet loss cannot work with softly refined labels. To solve this problem, a novel soft softmax-triplet loss is proposed to support learning with soft pseudo triplet labels for achieving the optimal domain adaptation performance. The proposed MMT framework achieves considerable improvements of 14.4%, 18.2%, 13.1% and 16.4% mAP on Market-to-Duke, Duke-to-Market, Market-to-MSMT and Duke-to-MSMT unsupervised domain adaptation tasks.</description>
+      <pubDate>Tue, 07 Apr 2020 09:48:00 Z</pubDate>
+    </item>
+    <item>
+      <guid>http://yxgeee.github.io/projects/fdgan.html</guid>
+      <title>FD-GAN: Pose-guided Feature Distilling GAN</title>
+      <link>http://yxgeee.github.io/projects/fdgan.html</link>
+      <description>Person re-identification (reID) is an important task that requires to retrieve a person’s images from an image dataset, given one image of the person of interest. For learning robust person features, the pose variation of person images is one of the key challenges. Existing works targeting the problem either perform human alignment, or learn human-region-based representations. Extra pose information and computational cost is generally required for inference. To solve this issue, a Feature Distilling Generative Adversarial Network (FD-GAN) is proposed for learning identity-related and pose-unrelated representations. It is a novel framework based on a Siamese structure with multiple novel discriminators on human poses and identities. In addition to the discriminators, a novel same-pose loss is also integrated, which requires appearance of a same person’s generated images to be similar. After learning pose-unrelated person features with pose guidance, no auxiliary pose information and additional computational cost is required during testing. Our proposed FD-GAN achieves state-of-the-art performance on three person reID datasets, which demonstrates that the effectiveness and robust feature distilling capability of the proposed FD-GAN.</description>
+      <pubDate>Tue, 07 Apr 2020 09:48:00 Z</pubDate>
+    </item>
+    <item>
+      <guid>http://yxgeee.github.io/files/MMT-ICLR20.pdf</guid>
+      <title>MMT-ICLR20.pdf</title>
+      <link>http://yxgeee.github.io/files/MMT-ICLR20.pdf</link>
+      <description />
+      <pubDate>Tue, 07 Apr 2020 09:48:00 Z</pubDate>
+    </item>
+    <item>
+      <guid>http://yxgeee.github.io/files/fdgan_poster.pdf</guid>
+      <title>fdgan_poster.pdf</title>
+      <link>http://yxgeee.github.io/files/fdgan_poster.pdf</link>
+      <description />
+      <pubDate>Tue, 07 Apr 2020 09:48:00 Z</pubDate>
+    </item>
+  </channel>
+</rss>
+<!--<guid value="3285440f-0707-4680-b6f2-3a445c16e16f" />-->
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
