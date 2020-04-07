@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Mutual Mean-Teaching: Pseudo Label Refinery for Unsupervised Domain Adaptation on Person Re-identification</title>
+
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index,follow">
+<meta name="description" content="Person re-identification (re-ID) aims at identifying the same persons' images across different cameras. However, domain diversities between different datasets pose an evident challenge for adapting the re-ID model trained on one dataset to another one. State-of-the-art unsupervised domain adaptation methods for person re-ID transferred the learned knowledge from the source domain by optimizing with pseudo labels created by clustering algorithms on the target domain. Although they achieved state-of-the-art performances, the inevitable label noise caused by the clustering procedure was ignored. Such noisy pseudo labels substantially hinders the model's capability on further improving feature representations on the target domain. In order to mitigate the effects of noisy pseudo labels, we propose to softly refine the pseudo labels in the target domain by proposing an unsupervised framework, Mutual Mean-Teaching (MMT), to learn better features from the target domain via off-line refined hard pseudo labels and on-line refined soft pseudo labels in an alternative training manner.  In addition, the common practice is to adopt both the classification loss and the triplet loss jointly for achieving optimal performances in person re-ID models. However, conventional triplet loss cannot work with softly refined labels. To solve this problem, a novel soft softmax-triplet loss is proposed to support learning with soft pseudo triplet labels for achieving the optimal domain adaptation performance. The proposed MMT framework achieves considerable improvements of 14.4%, 18.2%, 13.1% and 16.4% mAP on Market-to-Duke, Duke-to-Market, Market-to-MSMT and Duke-to-MSMT unsupervised domain adaptation tasks.">
+<meta name="keywords" content="Label Refinery, Unsupervised Domain Adaptation, Person Re-identification; Computer Vision; Deep Learning">
+<link rel="author" href="https://yxgeee.github.io/">
+
+<!-- Fonts and stuff -->
+<link href="./files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./files/project.css" media="screen">
+<link rel="stylesheet" type="text/css" media="screen" href="./files/iconize.css">
+<script async="" src="./files/prettify.js"></script>
+
+
+</head>
+
+<body>
+  <div id="content">
+    <div id="content-inner">
+
+      <div class="section head">
+        <h1>Mutual Mean-Teaching: Pseudo Label Refinery for</h1>
+	<h1>Unsupervised Domain Adaptation on Person Re-identification</h1>
+
+	<div class="authors">
+	  <a href="https://yxgeee.github.io/">Yixiao Ge</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="https://scholar.google.com/citations?user=-Wpd7FcAAAAJ&hl=en">Dapeng Chen</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+	<div class="affiliations">
+	  <a href="http://mmlab.ie.cuhk.edu.hk/">Multimedia Laboratory, The Chinese University of Hong Kong</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+	<div class="venue">International Conference on Learning Representations (<a href="https://iclr.cc/" target="_blank">ICLR</a>) 2020 </div>
+
+    </div>
+
+    <center><img src="./mmt/framework.png" border="0" width="80%"></center>
+
+<div class="section abstract">
+	<h2>Abstract</h2>
+	<br>
+	<p>
+Person re-identification (re-ID) aims at identifying the same persons' images across different cameras. However, domain diversities between different datasets pose an evident challenge for adapting the re-ID model trained on one dataset to another one. State-of-the-art unsupervised domain adaptation methods for person re-ID transferred the learned knowledge from the source domain by optimizing with pseudo labels created by clustering algorithms on the target domain. Although they achieved state-of-the-art performances, the inevitable label noise caused by the clustering procedure was ignored. Such noisy pseudo labels substantially hinders the model's capability on further improving feature representations on the target domain. In order to mitigate the effects of noisy pseudo labels, we propose to softly refine the pseudo labels in the target domain by proposing an unsupervised framework, Mutual Mean-Teaching (MMT), to learn better features from the target domain via off-line refined hard pseudo labels and on-line refined soft pseudo labels in an alternative training manner.  In addition, the common practice is to adopt both the classification loss and the triplet loss jointly for achieving optimal performances in person re-ID models. However, conventional triplet loss cannot work with softly refined labels. To solve this problem, a novel soft softmax-triplet loss is proposed to support learning with soft pseudo triplet labels for achieving the optimal domain adaptation performance. The proposed MMT framework achieves considerable improvements of <b>14.4%, 18.2%, 13.1% and 16.4%</b> mAP on Market-to-Duke, Duke-to-Market, Market-to-MSMT and Duke-to-MSMT unsupervised domain adaptation tasks.
+	</p>
+      </div>
+
+<!-- <div class="section demo">
+	<h2>Public Video</h2>
+	<br>
+	<center>
+	  <iframe width="810" height="480" src="https://www.youtube.com/embed/YcmgCCRA1qc" frameborder="0" allowfullscreen></iframe>
+  </video>
+	    </center>
+      <center>
+      <a href="https://www.bilibili.com/video/BV1JT4y157Wt">Alternatively watch in bilibili</a>
+      </center>
+	    </div>
+
+<br> -->
+
+<div class="section materials">
+	<h2>Materials</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://arxiv.org/abs/2001.01526" target="_blank" class="imageLink"><img src="./mmt/paper.png"></a><br>
+		  <a href="https://arxiv.org/abs/2001.01526" target="_blank">Paper</a>
+		</div>
+	      </li>
+
+        <li class="grid">
+        <div class="griditem">
+        <a href="../files/MMT-ICLR20.pdf" target="_blank" class="imageLink"><img src="./mmt/slides.jpg"></a><br>
+        <a href="../files/MMT-ICLR20.pdf" target="_blank">Slides</a>
+        </div>
+        </li>
+
+        <li class="grid">
+      <div class="griditem">
+  <a href="https://github.com/yxgeee/MMT" target="_blank" class="imageLink"><img src="./files/code.png"></a><br>
+    <a href="https://github.com/yxgeee/MMT" target="_blank">Code and Models</a>
+  </div>
+      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br>
+
+<!-- <div class="section presentation">
+	<h2>Presentation</h2>
+	<center>
+	  <ul> -->
+            <!-- <li class="grid">
+	      <div class="griditem">
+		<a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank" class="imageLink"><img src="./compounddomain/video.png"></a><br>
+		  <a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank">Video Recording</a>
+		</div>
+	      </li> -->
+
+
+	    <!-- </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section code">
+	<h2>Code and Models</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://github.com/yxgeee/MMT" target="_blank" class="imageLink"><img src="./mmt/code.png"></a><br>
+		  <a href="https://github.com/yxgeee/MMT" target="_blank">Code and Models</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section data">
+	<h2>Datasets</h2>
+	<br>
+	<center>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank" class="imageLink"><img src="./compounddomain/dataset.png" border="2" width="70%"></a><br>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank">Open Long-Tailed Datasets</a>
+    </center>
+    </div>
+
+<br>-->
+
+<div class="section blog">
+	<h2>Blog</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://zhuanlan.zhihu.com/p/116074945" target="_blank" class="imageLink"><img src="./files/Zhihu_logo.png"></a><br>
+		  <a href="https://zhuanlan.zhihu.com/p/116074945" target="_blank">Zhihu Blog (in Chinese)</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br>
+
+<div class="section citation">
+	<h2>Citation</h2>
+	<div class="section bibtex">
+	  <pre>@inproceedings{
+  ge2020mutual,
+  title={Mutual Mean-Teaching: Pseudo Label Refinery for Unsupervised Domain Adaptation on Person Re-identification},
+  author={Yixiao Ge and Dapeng Chen and Hongsheng Li},
+  booktitle={International Conference on Learning Representations},
+  year={2020},
+  url={https://openreview.net/forum?id=rJlnOhVYPS}
+}</pre>
+	  </div>
+      </div>
+
+</body></html>
