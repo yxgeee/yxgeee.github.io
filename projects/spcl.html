@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Structured Domain Adaptation with Online Relation Regularization for Unsupervised Person Re-ID</title>
+<title>Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID</title>
 
 <!-- Meta tags for search engines to crawl -->
 <meta name="robots" content="index,follow">
-<meta name="description" content="Unsupervised domain adaptation (UDA) aims at adapting the model trained on a labeled source-domain dataset to an unlabeled target-domain dataset. The task of UDA on open-set person re-identification (re-ID) is even more challenging as the identities (classes) do not overlap between the two domains. One major research direction was based on domain translation, which, however, has fallen out of favor in recent years due to inferior performance compared to pseudo-label-based methods. We argue that translation-based methods have great potential on exploiting the valuable source-domain data but they did not provide proper regularization on the translation process. Specifically, these methods only focus on maintaining the identities of the translated images while ignoring the inter-sample relation during translation. To tackle the challenge, we propose an end-to-end structured domain adaptation framework with an online relation-consistency regularization term. During training, the person feature encoder is optimized to model inter-sample relations on-the-fly for supervising relation-consistency domain translation, which in turn, improves the encoder with informative translated images. An improved pseudo-label-based encoder can therefore be obtained by jointly training the source-to-target translated images with ground-truth identities and target-domain images with pseudo identities. In the experiments, our proposed framework is shown to outperform state-of-the-art methods on multiple UDA tasks of person re-ID.">
-<meta name="keywords" content="Structured Domain Translation; Unsupervised Domain Adaptation, Person Re-identification; Computer Vision; Deep Learning">
+<meta name="description" content="Domain adaptive object re-ID aims to transfer the learned knowledge from the labeled source domain to the unlabeled target domain to tackle the open-class re-identification problems. Although state-of-the-art pseudo-label-based methods have achieved great success, they did not make full use of all valuable information because of the domain gap and unsatisfying clustering performance. To solve these problems, we propose a novel self-paced contrastive learning framework with hybrid memory. The hybrid memory dynamically generates source-domain class-level, target-domain cluster-level and un-clustered instance-level supervisory signals for learning feature representations. Different from the conventional contrastive learning strategy, the proposed framework jointly distinguishes source-domain classes, and target-domain clusters and un-clustered instances. Most importantly, the proposed self-paced method gradually creates more reliable clusters to refine the hybrid memory and learning targets, and is shown to be the key to our outstanding performance. Our method outperforms state-of-the-arts on multiple domain adaptation tasks of object re-ID and even boosts the performance on the source domain without any extra annotations. Our generalized version on unsupervised person re-ID surpasses state-of-the-art algorithms by considerable 16.2% and 14.6% on Market-1501 and DukeMTMC-reID benchmarks.">
+<meta name="keywords" content="Unsupervised Learning; Unsupervised Domain Adaptation, Object Re-identification; Computer Vision; Deep Learning">
 <link rel="author" href="https://yxgeee.github.io/">
 
 <!-- Fonts and stuff -->
@@ -22,10 +22,12 @@
     <div id="content-inner">
 
       <div class="section head">
-        <h1>Structured Domain Adaptation with Online Relation Regularization for Unsupervised Person Re-ID</h1>
+        <h1>Self-paced Contrastive Learning with Hybrid Memory</h1>
+        <h1>for Domain Adaptive Object Re-ID</h1>
 
 	<div class="authors">
 	  <a href="https://yxgeee.github.io/">Yixiao Ge</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://scholar.google.com/citations?user=-Wpd7FcAAAAJ&hl=en">Dapeng Chen</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="http://home.ustc.edu.cn/~zhufengx/">Feng Zhu</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <a href="http://zhaorui.xyz/">Rui Zhao</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -39,13 +41,13 @@
 
     </div>
 
-    <center><img src="./sda/intro.png" border="0" width="80%"></center>
+    <center><img src="./spcl/framework.png" border="0" width="80%"></center>
 
 <div class="section abstract">
 	<h2>Abstract</h2>
 	<br>
 	<p>
-Unsupervised domain adaptation (UDA) aims at adapting the model trained on a labeled source-domain dataset to an unlabeled target-domain dataset. The task of UDA on open-set person re-identification (re-ID) is even more challenging as the identities (classes) do not overlap between the two domains. One major research direction was based on domain translation, which, however, has fallen out of favor in recent years due to inferior performance compared to pseudo-label-based methods. We argue that translation-based methods have great potential on exploiting the valuable source-domain data but they did not provide proper regularization on the translation process. Specifically, these methods only focus on maintaining the identities of the translated images while ignoring the inter-sample relation during translation. To tackle the challenge, we propose an end-to-end structured domain adaptation framework with an online relation-consistency regularization term. During training, the person feature encoder is optimized to model inter-sample relations on-the-fly for supervising relation-consistency domain translation, which in turn, improves the encoder with informative translated images. An improved pseudo-label-based encoder can therefore be obtained by jointly training the source-to-target translated images with ground-truth identities and target-domain images with pseudo identities. In the experiments, our proposed framework is shown to outperform state-of-the-art methods on multiple UDA tasks of person re-ID.
+Domain adaptive object re-ID aims to transfer the learned knowledge from the labeled source domain to the unlabeled target domain to tackle the open-class re-identification problems. Although state-of-the-art pseudo-label-based methods have achieved great success, they did not make full use of all valuable information because of the domain gap and unsatisfying clustering performance. To solve these problems, we propose a novel self-paced contrastive learning framework with hybrid memory. The hybrid memory dynamically generates source-domain class-level, target-domain cluster-level and un-clustered instance-level supervisory signals for learning feature representations. Different from the conventional contrastive learning strategy, the proposed framework jointly distinguishes source-domain classes, and target-domain clusters and un-clustered instances. Most importantly, the proposed self-paced method gradually creates more reliable clusters to refine the hybrid memory and learning targets, and is shown to be the key to our outstanding performance. Our method outperforms state-of-the-arts on multiple domain adaptation tasks of object re-ID and even boosts the performance on the source domain without any extra annotations. Our generalized version on unsupervised person re-ID surpasses state-of-the-art algorithms by considerable <b>16.2%</b> and <b>14.6%</b> on Market-1501 and DukeMTMC-reID benchmarks.
 	</p>
       </div>
 
@@ -70,8 +72,8 @@ Unsupervised domain adaptation (UDA) aims at adapting the model trained on a lab
 
           <li class="grid">
 	      <div class="griditem">
-		<a href="https://arxiv.org/abs/2003.06650" target="_blank" class="imageLink"><img src="./files/arxiv.png"></a><br>
-		  <a href="https://arxiv.org/abs/2003.06650" target="_blank">Paper</a>
+		<a href="https://arxiv.org/abs/2006.02713" target="_blank" class="imageLink"><img src="./files/arxiv.png"></a><br>
+		  <a href="https://arxiv.org/abs/2006.02713" target="_blank">Paper</a>
 		</div>
 	      </li>
 
@@ -84,8 +86,8 @@ Unsupervised domain adaptation (UDA) aims at adapting the model trained on a lab
 
         <li class="grid">
       <div class="griditem">
-  <a href="https://github.com/yxgeee/SDA" target="_blank" class="imageLink"><img src="./files/code.png"></a><br>
-    <a href="https://github.com/yxgeee/SDA" target="_blank">Code and Models</a>
+  <a href="https://github.com/yxgeee/SpCL" target="_blank" class="imageLink"><img src="./files/code.png"></a><br>
+    <a href="https://github.com/yxgeee/SpCL" target="_blank">Code and Models</a>
   </div>
       </li>
 
@@ -163,14 +165,14 @@ Unsupervised domain adaptation (UDA) aims at adapting the model trained on a lab
 <div class="section citation">
 	<h2>Citation</h2>
 	<div class="section bibtex">
-	  <pre>@misc{ge2020structured,
-    title={Structured Domain Adaptation for Unsupervised Person Re-identification},
-    author={Yixiao Ge and Feng Zhu and Rui Zhao and Hongsheng Li},
-    year={2020},
-    eprint={2003.06650},
-    archivePrefix={arXiv},
-    primaryClass={cs.CV}
-}</pre>
+	  <pre>@misc{ge2020selfpaced,
+        title={Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID},
+        author={Yixiao Ge and Dapeng Chen and Feng Zhu and Rui Zhao and Hongsheng Li},
+        year={2020},
+        eprint={2006.02713},
+        archivePrefix={arXiv},
+        primaryClass={cs.CV}
+    }</pre>
 	  </div>
       </div>
 
