@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Self-supervising Fine-grained Region Similarities for Large-scale Image Localization</title>
+
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index,follow">
+<meta name="description" content="The task of large-scale retrieval-based image localization is to estimate the geographical location of a query image by recognizing its nearest reference images from a city-scale dataset. However, the general public benchmarks only provide noisy GPS labels associated with the training images, which act as weak supervisions for learning image-to-image similarities. Such label noise prevents deep neural networks from learning discriminative features for accurate localization. To tackle this challenge, we propose to self-supervise image-to-region similarities in order to fully explore the potential of difficult positive images alongside their sub-regions. The estimated image-to-region similarities can serve as extra training supervision for improving the network in generations, which could in turn gradually refine the fine-grained similarities to achieve optimal performance. Our proposed self-enhanced image-to-region similarity labels effectively deal with the training bottleneck in the state-of-the-art pipelines without any additional parameters or manual annotations in both training and inference. Our method outperforms state-of-the-arts on the standard localization benchmarks by noticeable margins and shows excellent generalization capability on multiple image retrieval datasets.">
+<meta name="keywords" content="Image-based Localization; Computer Vision; Deep Learning">
+<link rel="author" href="https://yxgeee.github.io/">
+
+<!-- Fonts and stuff -->
+<link href="./files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./files/project.css" media="screen">
+<link rel="stylesheet" type="text/css" media="screen" href="./files/iconize.css">
+<script async="" src="./files/prettify.js"></script>
+
+
+</head>
+
+<body>
+  <div id="content">
+    <div id="content-inner">
+
+      <div class="section head">
+        <h1>Self-supervising Fine-grained Region Similarities</h1>
+        <h1>for Large-scale Image Localization</h1>
+
+	<div class="authors">
+	  <a href="https://yxgeee.github.io/">Yixiao Ge</a><sup>1,2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Haibo Wang<sup>2,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://home.ustc.edu.cn/~zhufengx/">Feng Zhu</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="http://zhaorui.xyz/">Rui Zhao</a><sup>2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+  <div class="affiliations">
+    1. <a href="http://mmlab.ie.cuhk.edu.hk/">Multimedia Laboratory, The Chinese University of Hong Kong</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- 1. <a href="http://mmlab.ie.cuhk.edu.hk/">The Chinese University of Hong Kong</a>&nbsp;&nbsp;&nbsp;&nbsp; -->
+    <br>
+    2. <a href="https://www.sensetime.com/en/">SenseTime Research</a>&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- <br> -->
+    3. <a href="http://global.cumt.edu.cn/">China University of Mining and Technology</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+	<!-- <div class="venue">International Conference on Learning Representations (<a href="https://iclr.cc/" target="_blank">ICLR</a>) 2020 </div> -->
+
+    </div>
+
+    <center><img src="./sfrs/framework.png" border="0" width="70%"></center>
+
+<div class="section abstract">
+	<h2>Abstract</h2>
+	<br>
+	<p>
+The task of large-scale retrieval-based image localization is to estimate the geographical location of a query image by recognizing its nearest reference images from a city-scale dataset. However, the general public benchmarks only provide noisy GPS labels associated with the training images, which act as weak supervisions for learning image-to-image similarities. Such label noise prevents deep neural networks from learning discriminative features for accurate localization. To tackle this challenge, we propose to self-supervise image-to-region similarities in order to fully explore the potential of difficult positive images alongside their sub-regions. The estimated image-to-region similarities can serve as extra training supervision for improving the network in generations, which could in turn gradually refine the fine-grained similarities to achieve optimal performance. Our proposed self-enhanced image-to-region similarity labels effectively deal with the training bottleneck in the state-of-the-art pipelines without any additional parameters or manual annotations in both training and inference. Our method outperforms state-of-the-arts on the standard localization benchmarks by noticeable margins and shows excellent generalization capability on multiple image retrieval datasets.
+	</p>
+      </div>
+
+<!-- <div class="section demo">
+	<h2>Public Video</h2>
+	<br>
+	<center>
+	  <iframe width="810" height="480" src="https://www.youtube.com/embed/YcmgCCRA1qc" frameborder="0" allowfullscreen></iframe>
+  </video>
+	    </center>
+      <center>
+      <a href="https://www.bilibili.com/video/BV1JT4y157Wt">Alternatively watch in bilibili</a>
+      </center>
+	    </div>
+
+<br> -->
+
+<div class="section materials">
+	<h2>Materials</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://arxiv.org/abs/2006.03926" target="_blank" class="imageLink"><img src="./files/arxiv.png"></a><br>
+		  <a href="https://arxiv.org/abs/2006.03926" target="_blank">Paper</a>
+		</div>
+	      </li>
+
+        <!-- <li class="grid">
+        <div class="griditem">
+        <a href="../files/MMT-ICLR20.pdf" target="_blank" class="imageLink"><img src="./mmt/slides.jpg"></a><br>
+        <a href="../files/MMT-ICLR20.pdf" target="_blank">Slides</a>
+        </div>
+        </li> -->
+
+        <li class="grid">
+      <div class="griditem">
+  <a href="https://github.com/yxgeee/SFRS" target="_blank" class="imageLink"><img src="./files/code.png"></a><br>
+    <a href="https://github.com/yxgeee/SFRS" target="_blank">Code and Models</a>
+  </div>
+      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br>
+
+<!-- <div class="section presentation">
+	<h2>Presentation</h2>
+	<center>
+	  <ul> -->
+            <!-- <li class="grid">
+	      <div class="griditem">
+		<a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank" class="imageLink"><img src="./compounddomain/video.png"></a><br>
+		  <a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank">Video Recording</a>
+		</div>
+	      </li> -->
+
+
+	    <!-- </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section code">
+	<h2>Code and Models</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://github.com/yxgeee/MMT" target="_blank" class="imageLink"><img src="./mmt/code.png"></a><br>
+		  <a href="https://github.com/yxgeee/MMT" target="_blank">Code and Models</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section data">
+	<h2>Datasets</h2>
+	<br>
+	<center>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank" class="imageLink"><img src="./compounddomain/dataset.png" border="2" width="70%"></a><br>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank">Open Long-Tailed Datasets</a>
+    </center>
+    </div>
+
+<br>-->
+
+<!-- <div class="section blog">
+	<h2>Blog</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://zhuanlan.zhihu.com/p/116074945" target="_blank" class="imageLink"><img src="./files/Zhihu_logo.png"></a><br>
+		  <a href="https://zhuanlan.zhihu.com/p/116074945" target="_blank">Zhihu Blog (in Chinese)</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<div class="section citation">
+	<h2>Citation</h2>
+	<div class="section bibtex">
+	  <pre>@misc{ge2020selfsupervising,
+    title={Self-supervising Fine-grained Region Similarities for Large-scale Image Localization},
+    author={Yixiao Ge and Haibo Wang and Feng Zhu and Rui Zhao and Hongsheng Li},
+    year={2020},
+    eprint={2006.03926},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}</pre>
+	  </div>
+      </div>
+
+</body></html>
