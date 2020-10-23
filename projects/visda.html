@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Improved Mutual Mean-Teaching for Unsupervised Domain Adaptive Re-ID</title>
+
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index,follow">
+<meta name="description" content="In this technical report, we present our submission to the VisDA Challenge in ECCV 2020 and we achieved one of the top-performing results on the leaderboard. Our solution is based on Structured Domain Adaptation (SDA) and Mutual Mean-Teaching (MMT) frameworks. SDA, a domain-translation-based framework, focuses on carefully translating the source-domain images to the target domain. MMT, a pseudo-label-based framework, focuses on conducting pseudo label refinery with robust soft labels. Specifically, there are three main steps in our training pipeline. (i) We adopt SDA to generate source-to-target translated images, and (ii) such images serve as informative training samples to pre-train the network. (iii) The pre-trained network is further fine-tuned by MMT on the target domain. Note that we design an improved MMT (dubbed MMT+) to further mitigate the label noise by modeling inter-sample relations across two domains and maintaining the instance discrimination. Our proposed method achieved 74.78% accuracies in terms of mAP, ranked the 2nd place out of 153 teams.">
+<meta name="keywords" content="Unsupervised Domain Adaptation, Person Re-identification; Computer Vision; Deep Learning">
+<link rel="author" href="https://yxgeee.github.io/">
+
+<!-- Fonts and stuff -->
+<link href="./files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./files/project.css" media="screen">
+<link rel="stylesheet" type="text/css" media="screen" href="./files/iconize.css">
+<script async="" src="./files/prettify.js"></script>
+
+
+</head>
+
+<body>
+  <div id="content">
+    <div id="content-inner">
+
+      <div class="section head">
+        <h1>Improved Mutual Mean-Teaching</h1>
+	<h1>for Unsupervised Domain Adaptive Re-ID</h1>
+
+	<div class="authors">
+	  <a href="https://yxgeee.github.io/">Yixiao Ge</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://scholar.google.com/citations?user=Zuu_UFkAAAAJ&hl=en">Shijie Yu</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="https://scholar.google.com/citations?user=-Wpd7FcAAAAJ&hl=en">Dapeng Chen</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+	<div class="affiliations">
+	  <a href="http://mmlab.ie.cuhk.edu.hk/">Multimedia Laboratory, The Chinese University of Hong Kong</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+	<div class="venue">Visual Domain Adaptation Challenge (<a href="http://ai.bu.edu/visda-2020/" target="_blank">VisDA</a>) 2020 (ECCVW)</div>
+
+    </div>
+
+    <center><img src="../images/mmt+.png" border="0" width="80%"></center>
+
+<div class="section abstract">
+	<h2>Abstract</h2>
+	<br>
+	<p>
+In this technical report, we present our submission to the VisDA Challenge in ECCV 2020 and we achieved one of the top-performing results on the leaderboard. Our solution is based on Structured Domain Adaptation (SDA) and Mutual Mean-Teaching (MMT) frameworks. SDA, a domain-translation-based framework, focuses on carefully translating the source-domain images to the target domain. MMT, a pseudo-label-based framework, focuses on conducting pseudo label refinery with robust soft labels. Specifically, there are three main steps in our training pipeline. (i) We adopt SDA to generate source-to-target translated images, and (ii) such images serve as informative training samples to pre-train the network. (iii) The pre-trained network is further fine-tuned by MMT on the target domain. Note that we design an improved MMT (dubbed MMT+) to further mitigate the label noise by modeling inter-sample relations across two domains and maintaining the instance discrimination. Our proposed method achieved 74.78% accuracies in terms of mAP, ranked the <b>2nd</b> place out of 153 teams.
+	</p>
+      </div>
+
+<div class="section demo">
+	<h2>Public Video
+    (Source:
+    <a href="https://www.youtube.com/embed/Ox-ZJhgFwSU" target="search_iframe">YouTube</a> /
+    <a href="https://player.bilibili.com/player.html?aid=414284931&cid=228064764&as_wide=1" target="search_iframe">bilibili</a>)
+  </h2>
+
+	<br>
+	<center>
+	  <iframe id="video" width="810" height="480" src="https://www.youtube.com/embed/Ox-ZJhgFwSU" name="search_iframe" frameborder="0" allowfullscreen></iframe>
+  <!-- </video> -->
+	</center>
+  <br>
+
+</div>
+
+<br>
+
+<div class="section materials">
+	<h2>Materials</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://arxiv.org/abs/2008.10313" target="_blank" class="imageLink"><img src="./files/arxiv.png"></a><br>
+		  <a href="https://arxiv.org/abs/2008.10313" target="_blank">Paper</a>
+		</div>
+	      </li>
+
+        <li class="grid">
+        <div class="griditem">
+        <a href="../files/visda_slides.pdf" target="_blank" class="imageLink"><img src="./visda/cover.jpg"></a><br>
+        <a href="../files/visda_slides.pdf" target="_blank">Slides</a>
+        </div>
+        </li>
+
+        <li class="grid">
+      <div class="griditem">
+  <a href="https://github.com/yxgeee/MMT-plus" target="_blank" class="imageLink"><img src="./files/code.png"></a><br>
+    <a href="https://github.com/yxgeee/MMT-plus" target="_blank">Code and Models</a>
+  </div>
+      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br>
+
+<!-- <div class="section presentation">
+	<h2>Presentation</h2>
+	<center>
+	  <ul> -->
+            <!-- <li class="grid">
+	      <div class="griditem">
+		<a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank" class="imageLink"><img src="./compounddomain/video.png"></a><br>
+		  <a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank">Video Recording</a>
+		</div>
+	      </li> -->
+
+
+	    <!-- </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section code">
+	<h2>Code and Models</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://github.com/yxgeee/MMT" target="_blank" class="imageLink"><img src="./mmt/code.png"></a><br>
+		  <a href="https://github.com/yxgeee/MMT" target="_blank">Code and Models</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section data">
+	<h2>Datasets</h2>
+	<br>
+	<center>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank" class="imageLink"><img src="./compounddomain/dataset.png" border="2" width="70%"></a><br>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank">Open Long-Tailed Datasets</a>
+    </center>
+    </div>
+
+<br>-->
+
+<div class="section blog">
+	<h2>Blog</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://zhuanlan.zhihu.com/p/265758275" target="_blank" class="imageLink"><img src="./files/Zhihu_logo.png"></a><br>
+		  <a href="https://zhuanlan.zhihu.com/p/265758275" target="_blank">Zhihu Blog (in Chinese)</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br>
+
+<div class="section citation">
+	<h2>Citation</h2>
+	<div class="section bibtex">
+	  <pre>@misc{ge2020improved,
+    title={Improved Mutual Mean-Teaching for Unsupervised Domain Adaptive Re-ID},
+    author={Yixiao Ge and Shijie Yu and Dapeng Chen},
+    year={2020},
+    eprint={2008.10313},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+
+@inproceedings{ge2020mutual,
+    title={Mutual Mean-Teaching: Pseudo Label Refinery for Unsupervised Domain Adaptation on Person Re-identification},
+    author={Yixiao Ge and Dapeng Chen and Hongsheng Li},
+    booktitle={International Conference on Learning Representations},
+    year={2020},
+    url={https://openreview.net/forum?id=rJlnOhVYPS}
+}
+
+@misc{ge2020structured,
+    title={Structured Domain Adaptation with Online Relation Regularization for Unsupervised Person Re-ID},
+    author={Yixiao Ge and Feng Zhu and Rui Zhao and Hongsheng Li},
+    year={2020},
+    eprint={2003.06650},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}</pre>
+	  </div>
+      </div>
+
+</body></html>
