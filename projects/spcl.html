@@ -48,23 +48,28 @@
 	<h2>Abstract</h2>
 	<br>
 	<p>
-Domain adaptive object re-ID aims to transfer the learned knowledge from the labeled source domain to the unlabeled target domain to tackle the open-class re-identification problems. Although state-of-the-art pseudo-label-based methods have achieved great success, they did not make full use of all valuable information because of the domain gap and unsatisfying clustering performance. To solve these problems, we propose a novel self-paced contrastive learning framework with hybrid memory. The hybrid memory dynamically generates source-domain class-level, target-domain cluster-level and un-clustered instance-level supervisory signals for learning feature representations. Different from the conventional contrastive learning strategy, the proposed framework jointly distinguishes source-domain classes, and target-domain clusters and un-clustered instances. Most importantly, the proposed self-paced method gradually creates more reliable clusters to refine the hybrid memory and learning targets, and is shown to be the key to our outstanding performance. Our method outperforms state-of-the-arts on multiple domain adaptation tasks of object re-ID and even boosts the performance on the source domain without any extra annotations. Our generalized version on unsupervised person re-ID surpasses state-of-the-art algorithms by considerable <b>16.2%</b> and <b>14.6%</b> on Market-1501 and DukeMTMC-reID benchmarks.
+Domain adaptive object re-ID aims to transfer the learned knowledge from the labeled source domain to the unlabeled target domain to tackle the open-class re-identification problems. Although state-of-the-art pseudo-label-based methods have achieved great success, they did not make full use of all valuable information because of the domain gap and unsatisfying clustering performance. To solve these problems, we propose a novel self-paced contrastive learning framework with hybrid memory. The hybrid memory dynamically generates source-domain class-level, target-domain cluster-level and un-clustered instance-level supervisory signals for learning feature representations. Different from the conventional contrastive learning strategy, the proposed framework jointly distinguishes source-domain classes, and target-domain clusters and un-clustered instances. Most importantly, the proposed self-paced method gradually creates more reliable clusters to refine the hybrid memory and learning targets, and is shown to be the key to our outstanding performance. Our method outperforms state-of-the-arts on multiple domain adaptation tasks of object re-ID and even boosts the performance on the source domain without any extra annotations. Our generalized version on unsupervised person re-ID surpasses state-of-the-art algorithms by considerable <b>16.7%</b> and <b>7.9%</b> on Market-1501 and MSMT17 benchmarks.
 	</p>
       </div>
 
-<!-- <div class="section demo">
-	<h2>Public Video</h2>
+
+<div class="section demo">
+	<h2>Public Video
+    (Source:
+    <a href="https://www.youtube.com/embed/77prEdxBuLE" target="search_iframe">YouTube</a> /
+    <a href="https://player.bilibili.com/player.html?aid=970104264&cid=248579993&as_wide=1" target="search_iframe">bilibili</a>)
+  </h2>
+
 	<br>
 	<center>
-	  <iframe width="810" height="480" src="https://www.youtube.com/embed/YcmgCCRA1qc" frameborder="0" allowfullscreen></iframe>
-  </video>
-	    </center>
-      <center>
-      <a href="https://www.bilibili.com/video/BV1JT4y157Wt">Alternatively watch in bilibili</a>
-      </center>
-	    </div>
+	  <iframe id="video" width="810" height="480" src="https://www.youtube.com/embed/77prEdxBuLE" name="search_iframe" frameborder="0" allowfullscreen></iframe>
+  <!-- </video> -->
+	</center>
+  <br>
 
-<br> -->
+</div>
+
+<br>
 
 <div class="section materials">
 	<h2>Materials</h2>
@@ -78,12 +83,12 @@ Domain adaptive object re-ID aims to transfer the learned knowledge from the lab
 		</div>
 	      </li>
 
-        <!-- <li class="grid">
+        <li class="grid">
         <div class="griditem">
-        <a href="../files/MMT-ICLR20.pdf" target="_blank" class="imageLink"><img src="./mmt/slides.jpg"></a><br>
-        <a href="../files/MMT-ICLR20.pdf" target="_blank">Slides</a>
+        <a href="../files/spcl_slides.pdf" target="_blank" class="imageLink"><img src="./spcl/cover.png"></a><br>
+        <a href="../files/spcl_slides.pdf" target="_blank">Slides</a>
         </div>
-        </li> -->
+        </li>
 
         <li class="grid">
       <div class="griditem">
@@ -166,14 +171,12 @@ Domain adaptive object re-ID aims to transfer the learned knowledge from the lab
 <div class="section citation">
 	<h2>Citation</h2>
 	<div class="section bibtex">
-	  <pre>@misc{ge2020selfpaced,
-        title={Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID},
-        author={Yixiao Ge and Dapeng Chen and Feng Zhu and Rui Zhao and Hongsheng Li},
-        year={2020},
-        eprint={2006.02713},
-        archivePrefix={arXiv},
-        primaryClass={cs.CV}
-    }</pre>
+	  <pre>@inproceedings{ge2020self,
+    title={Self-paced Contrastive Learning with Hybrid Memory for Domain Adaptive Object Re-ID},
+    author={Yixiao Ge and Feng Zhu and Dapeng Chen and Rui Zhao and Hongsheng Li},
+    booktitle={Advances in Neural Information Processing Systems},
+    year={2020}
+}</pre>
 	  </div>
       </div>
 
