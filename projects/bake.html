@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Self-distillation with Batch Knowledge Ensembling Improves ImageNet Classification</title>
+
+<!-- Meta tags for search engines to crawl -->
+<meta name="robots" content="index,follow">
+<meta name="description" content="The recent studies of knowledge distillation have discovered that ensembling the 'dark knowledge' from multiple teachers or students contributes to creating better soft targets for training, but at the cost of significantly more computations and/or parameters. In this work, we present BAtch Knowledge Ensembling (BAKE) to produce refined soft targets for anchor images by propagating and ensembling the knowledge of the other samples in the same mini-batch. Specifically, for each sample of interest, the propagation of knowledge is weighted in accordance with the inter-sample affinities, which are estimated on-the-fly with the current network. The propagated knowledge can then be ensembled to form a better soft target for distillation. In this way, our BAKE framework achieves online knowledge ensembling across multiple samples with only a single network. It requires minimal computational and memory overhead compared to existing knowledge ensembling methods. Extensive experiments demonstrate that the lightweight yet effective BAKE consistently boosts the classification performance of various architectures on multiple datasets, e.g., a significant +1.2% gain of ResNet-50 on ImageNet with only +3.7% computational overhead and zero additional parameters. BAKE does not only improve the vanilla baselines, but also surpasses the single-network state-of-the-arts on all the benchmarks.">
+<meta name="keywords" content="Representation Learning; Image Classification; Computer Vision; Deep Learning">
+<link rel="author" href="https://yxgeee.github.io/">
+
+<!-- Fonts and stuff -->
+<link href="./files/css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./files/project.css" media="screen">
+<link rel="stylesheet" type="text/css" media="screen" href="./files/iconize.css">
+<script async="" src="./files/prettify.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+</head>
+
+<body>
+  <div id="content">
+    <div id="content-inner">
+
+      <div class="section head">
+        <h1>Self-distillation with Batch Knowledge Ensembling</h1>
+        <h1>Improves ImageNet Classification</h1>
+
+	<div class="authors">
+	  <a href="https://yxgeee.github.io/">Yixiao Ge</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://scholar.google.com/citations?user=1uIAXh0AAAAJ">Ching Lam Choi</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://scholar.google.com/citations?user=xImPgj4AAAAJ">Xiao Zhang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Peipei Zhao<sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <!-- <br> -->
+    <a href="http://home.ustc.edu.cn/~zhufengx/">Feng Zhu</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="http://zhaorui.xyz/">Rui Zhao</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>1,2,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+	<div class="affiliations">
+	  1. <a href="http://mmlab.ie.cuhk.edu.hk/">Multimedia Laboratory, The Chinese University of Hong Kong</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <br>
+      2. Centre for Perceptual and Interactive Intelligence (CPII)&nbsp;&nbsp;&nbsp;&nbsp;
+	  <br>
+      3. <a href="https://cs.xidian.edu.cn/English/Home.htm">School of CST, Xidian University</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	  <!-- <br> -->
+      4. <a href="https://www.sensetime.com/en/">SenseTime Research</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</div>
+
+  <!-- <div class="venue">Conference on Neural Information Processing Systems (<a href="https://nips.cc/" target="_blank">NeurIPS</a>) 2020 </div> -->
+
+    </div>
+
+    <!-- <br> -->
+
+<div class="section abstract">
+	<h2>Abstract <a href="" target="search_iframe">[Full Paper]</a></h2>
+	<figure>
+  <center><img src="./bake/fig2.png" alt="Trulli" style="width:90%"></center><br>
+  <center><figcaption>Fig. 1 - Conceptual comparison of three knowledge ensembling mechanisms.</figcaption></center>
+</figure>
+	<p>
+    The recent studies of knowledge distillation have discovered that ensembling the "dark knowledge" from multiple teachers (see <b>(a)</b>) or students (see <b>(b)</b>) contributes to creating better soft targets for training, but at the cost of significantly more computations and/or parameters. In this work, we present <b>BA</b>tch <b>K</b>nowledge <b>E</b>nsembling (<b>BAKE</b>) to produce refined soft targets for anchor images by propagating and ensembling the knowledge of the other samples in the same mini-batch (see <b>(c)</b>). Specifically, for each sample of interest, the propagation of knowledge is weighted in accordance with the inter-sample affinities, which are estimated on-the-fly with the current network. The propagated knowledge can then be ensembled to form a better soft target for distillation. In this way, our BAKE framework achieves online knowledge ensembling across multiple samples with only a single network. It requires minimal computational and memory overhead compared to existing knowledge ensembling methods. Extensive experiments demonstrate that the lightweight yet effective BAKE consistently boosts the classification performance of various architectures on multiple datasets, <i>e.g.</i>, a significant <mark><b>+1.2%</b></mark> gain of ResNet-50 on ImageNet with only <mark>+3.7%</mark> computational overhead and <mark>zero</mark> additional parameters. BAKE does not only improve the vanilla baselines, but also surpasses the single-network state-of-the-arts on all the benchmarks.
+</p>
+      </div>
+
+      <br>
+
+
+ <div class="section method">
+	<h2>Method Overview</h2>
+	<figure>
+  <center><img src="./bake/fig1.png" alt="Trulli" style="width:30%"></center><br>
+  <figcaption>Fig. 2 - <b>BA</b>tch <b>K</b>nowledge <b>E</b>nsembling (<b>BAKE</b>) produces soft targets for self-distillation <mark>with a single network</mark> (an encoder and a classifier). For an anchor image $x^\text{anchor}$, the knowledge of the other samples $\{x_1, x_2, x_3, \cdots\}$ in the same batch is weightedly propagated and ensembled to form a better soft targets for distillation on-the-fly. Note that $x^\text{anchor}$ and $\{x_1, x_2, x_3, \dots\}$ are fed into the same network. This method enables knowledge ensembling with minimal computational and memory overhead.</figcaption>
+</figure>
+      <!-- </div> -->
+
+<br>
+	<figure>
+  <center><img src="./bake/diff.png" alt="Trulli" style="width:50%"></center><br>
+  <center><figcaption>Fig. 3 - Key differences between our method and related works.</figcaption></center>
+</figure>
+      </div>
+
+      <br>
+
+
+       <div class="section implementation">
+	<h2>Implementation <a href="https://github.com/yxgeee/BAKE" target="search_iframe">[Full Code]</a></h2>
+	<figure>
+  <center><img src="./bake/code.png" alt="Trulli" style="width:50%"></center>
+</figure>
+      </div>
+
+      <br>
+
+ <div class="section results">
+	<h2>Results on ImageNet</h2>
+   <figure>
+  <center><img src="./bake/results.png" alt="Trulli" style="width:50%"></center><br>
+  <figcaption>Fig. 4 - <b>BAKE</b> improves various architectures with minimal computational overhead. We report the top-1 accuracy (%) on ImageNet. "Vanilla" indicates training with a conventional cross-entropy loss. The time consumption is counted on 8 Titan X GPUs. Please refer to our paper for more results.</figcaption>
+</figure>
+      </div>
+
+      <br>
+
+ <div class="section examples">
+	<h2>Soft Target Examples on ImageNet</h2>
+	<figure>
+  <center><img src="./bake/examples.png" alt="Trulli" style="width:90%"></center><br>
+  <figcaption>Fig. 5 - We sample three tuples of images (four images in each tuple) from three batches to show the soft targets produced by <b>BAKE</b>. The images are sampled from ImageNet. "GT" denotes the manually annotated ground-truth labels. The knowledge of samples from the same batch is propagated and ensembled to form a better soft learning target for each sample in the batch. Note that only the top-3 classes of soft targets with the highest probabilities are illustrated for brevity.</figcaption>
+</figure>
+      </div>
+
+<!-- <div class="section demo">
+	<h2>Public Video
+    (Source:
+    <a href="https://www.youtube.com/embed/77prEdxBuLE" target="search_iframe">YouTube</a> /
+    <a href="https://player.bilibili.com/player.html?aid=970104264&cid=248579993&as_wide=1" target="search_iframe">bilibili</a>)
+  </h2>
+
+	<br>
+	<center>
+	  <iframe id="video" width="810" height="480" src="https://www.youtube.com/embed/77prEdxBuLE" name="search_iframe" frameborder="0" allowfullscreen></iframe>
+	</center>
+  <br>
+
+</div> -->
+
+<br>
+
+<div class="section materials">
+	<h2>Links</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://arxiv.org/" target="_blank" class="imageLink"><img src="./files/arxiv.png"></a><br>
+		  <a href="https://arxiv.org/" target="_blank">Paper</a>
+		</div>
+	      </li>
+
+        <!-- <li class="grid">
+        <div class="griditem">
+        <a href="../files/spcl_slides.pdf" target="_blank" class="imageLink"><img src="./spcl/cover.png"></a><br>
+        <a href="../files/spcl_slides.pdf" target="_blank">Slides</a>
+        </div>
+        </li> -->
+
+        <!-- <li class="grid">
+        <div class="griditem">
+        <a href="../files/spcl_poster.pdf" target="_blank" class="imageLink"><img src="./spcl/poster.png"></a><br>
+        <a href="../files/spcl_poster.pdf" target="_blank">Poster</a>
+        </div>
+        </li> -->
+
+        <li class="grid">
+      <div class="griditem">
+  <a href="https://github.com/yxgeee/BAKE" target="_blank" class="imageLink"><img src="./files/code.png"></a><br>
+    <a href="https://github.com/yxgeee/BAKE" target="_blank">Code and Models</a>
+  </div>
+      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br>
+
+<!-- <div class="section presentation">
+	<h2>Presentation</h2>
+	<center>
+	  <ul> -->
+            <!-- <li class="grid">
+	      <div class="griditem">
+		<a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank" class="imageLink"><img src="./compounddomain/video.png"></a><br>
+		  <a href="https://www.youtube.com/watch?v=BQZ5xKd5kis&t=1361" target="_blank">Video Recording</a>
+		</div>
+	      </li> -->
+
+
+	    <!-- </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section code">
+	<h2>Code and Models</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://github.com/yxgeee/MMT" target="_blank" class="imageLink"><img src="./mmt/code.png"></a><br>
+		  <a href="https://github.com/yxgeee/MMT" target="_blank">Code and Models</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div>
+
+<br> -->
+
+<!-- <div class="section data">
+	<h2>Datasets</h2>
+	<br>
+	<center>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank" class="imageLink"><img src="./compounddomain/dataset.png" border="2" width="70%"></a><br>
+      	<a href="https://drive.google.com/open?id=1j7Nkfe6ZhzKFXePHdsseeeGI877Xu1yf" target="_blank">Open Long-Tailed Datasets</a>
+    </center>
+    </div>
+
+<br>-->
+
+<!-- <div class="section blog">
+	<h2>Blog</h2>
+	<center>
+	  <ul>
+
+          <li class="grid">
+	      <div class="griditem">
+		<a href="https://zhuanlan.zhihu.com/p/269112325" target="_blank" class="imageLink"><img src="./files/Zhihu_logo.png"></a><br>
+		  <a href="https://zhuanlan.zhihu.com/p/269112325" target="_blank">Zhihu Blog (in Chinese)</a>
+		</div>
+	      </li>
+
+	    </ul>
+	    </center>
+	    </div> -->
+
+<br>
+
+<div class="section citation">
+	<h2>Citation</h2>
+	<div class="section bibtex">
+	  <pre>@misc{ge2020bake,
+    title={Self-distillation with Batch Knowledge Ensembling Improves ImageNet Classification},
+    author={Yixiao Ge and Ching Lam Choi and Xiao Zhang and Peipei Zhao and Feng Zhu and Rui Zhao and Hongsheng Li},
+    year={2021},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}</pre>
+	  </div>
+      </div>
+
+</body></html>
