@@ -9,9 +9,10 @@
 <link rel="author" href="https://yxgeee.github.io/">
 
 <!-- Fonts and stuff -->
-<link href="./files/css" rel="stylesheet" type="text/css">
+<link href="./files/css.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="./files/project.css" media="screen">
 <link rel="stylesheet" type="text/css" media="screen" href="./files/iconize.css">
+<script src="./files/effect.js "></script>
 <script async="" src="./files/prettify.js"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
@@ -28,7 +29,7 @@
     <div id="content-inner">
 
       <div class="section head">
-        <h1>Self-distillation with Batch Knowledge Ensembling</h1>
+        <h1>Self-distillation with <font color="Tomato">BA</font>tch <font color="Tomato">K</font>nowledge <font color="Tomato">E</font>nsembling</h1>
         <h1>Improves ImageNet Classification</h1>
 
 	<div class="authors">
@@ -53,7 +54,17 @@
 	</div>
 
   <!-- <div class="venue">Conference on Neural Information Processing Systems (<a href="https://nips.cc/" target="_blank">NeurIPS</a>) 2020 </div> -->
-
+  	<ul id="tabs">
+  		<li>
+  			<a href="https://arxiv.org/" name="#tab1">Paper</a>
+  		</li>
+  		<li>
+  			<a href="https://github.com/yxgeee/BAKE" name="#tab2">Code</a>
+  		</li>
+  		<li>
+  			<a href="#bibtex" name="#tab3">BibTex</a>
+  		</li>
+  	</ul>
     </div>
 
     <!-- <br> -->
@@ -238,7 +249,7 @@
 
 <br>
 
-<div class="section citation">
+<div class="section citation", id="bibtex">
 	<h2>Citation</h2>
 	<div class="section bibtex">
 	  <pre>@misc{ge2020bake,
@@ -249,6 +260,11 @@
     primaryClass={cs.CV}
 }</pre>
 	  </div>
+      </div>
+
+      <div class="section contact">
+        <h2 id="contact">Contact</h2>
+        <p>If you have any question, please contact Yixiao Ge at <strong>yxge@link.cuhk.edu.hk</strong>.</p>
       </div>
 
 </body></html>
