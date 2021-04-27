@@ -72,12 +72,20 @@
 <div class="section abstract">
 	<h2>Abstract <a href="" target="search_iframe">[Full Paper]</a></h2>
 	<figure>
-  <center><img src="./bake/fig2.png" alt="Trulli" style="width:90%"></center><br>
+  <center><img src="./bake/fig2.png" alt="Trulli" style="width:100%"></center><br>
   <center><figcaption>Fig. 1 - Conceptual comparison of three knowledge ensembling mechanisms.</figcaption></center>
 </figure>
-	<p>
+<h3>Background:</h3>
+<p>The recent studies of knowledge distillation have discovered that ensembling the "dark knowledge" from multiple teachers (see <b>(a)</b>) or students (see <b>(b)</b>) contributes to creating better soft targets for training, but at the cost of <mark>significantly more computations and/or parameters</mark>.</p>
+<h3>Our Contributions:</h3>
+<ul>
+<li>We for the first time introduce to produce ensembled soft targets for self-distillation without using multiple networks or additional network branches.</li><br>
+<li>We propose a novel <b>BA</b>tch <b>K</b>nowledge <b>E</b>nsembling (<b>BAKE</b>) mechanism to online refine the distillation targets with the cross-sample knowledge, <i>i.e.</i>, weightedly aggregating the knowledge from other samples in the same batch (see <b>(c)</b>).</li><br>
+<li>Our method is simple yet consistently effective on improving classification performances of various networks and datasets with <mark>minimal computational overhead and zero additional parameters</mark>, <i>e.g.</i>, a significant <b>+1.2%</b> gain of ResNet-50 on ImageNet with only <b>+3.7%</b> computational overhead.</li>
+</ul>
+	<!-- <p>
     The recent studies of knowledge distillation have discovered that ensembling the "dark knowledge" from multiple teachers (see <b>(a)</b>) or students (see <b>(b)</b>) contributes to creating better soft targets for training, but at the cost of significantly more computations and/or parameters. In this work, we present <b>BA</b>tch <b>K</b>nowledge <b>E</b>nsembling (<b>BAKE</b>) to produce refined soft targets for anchor images by propagating and ensembling the knowledge of the other samples in the same mini-batch (see <b>(c)</b>). Specifically, for each sample of interest, the propagation of knowledge is weighted in accordance with the inter-sample affinities, which are estimated on-the-fly with the current network. The propagated knowledge can then be ensembled to form a better soft target for distillation. In this way, our BAKE framework achieves online knowledge ensembling across multiple samples with only a single network. It requires minimal computational and memory overhead compared to existing knowledge ensembling methods. Extensive experiments demonstrate that the lightweight yet effective BAKE consistently boosts the classification performance of various architectures on multiple datasets, <i>e.g.</i>, a significant <mark><b>+1.2%</b></mark> gain of ResNet-50 on ImageNet with only <mark>+3.7%</mark> computational overhead and <mark>zero</mark> additional parameters. BAKE does not only improve the vanilla baselines, but also surpasses the single-network state-of-the-arts on all the benchmarks.
-</p>
+</p> -->
       </div>
 
       <br>
@@ -86,8 +94,8 @@
  <div class="section method">
 	<h2>Method Overview</h2>
 	<figure>
-  <center><img src="./bake/fig1.png" alt="Trulli" style="width:30%"></center><br>
-  <figcaption>Fig. 2 - <b>BA</b>tch <b>K</b>nowledge <b>E</b>nsembling (<b>BAKE</b>) produces soft targets for self-distillation <mark>with a single network</mark> (an encoder and a classifier). For an anchor image $x^\text{anchor}$, the knowledge of the other samples $\{x_1, x_2, x_3, \cdots\}$ in the same batch is weightedly propagated and ensembled to form a better soft targets for distillation on-the-fly. Note that $x^\text{anchor}$ and $\{x_1, x_2, x_3, \dots\}$ are fed into the same network. This method enables knowledge ensembling with minimal computational and memory overhead.</figcaption>
+  <center><img src="./bake/fig1.png" alt="Trulli" style="width:40%"></center><br>
+  <figcaption>Fig. 2 - <b>BAKE</b> produces soft targets for self-distillation <mark>with a single network</mark> (an encoder and a classifier). For an anchor image $x^\text{anchor}$, the knowledge of the other samples $\{x_1, x_2, x_3, \cdots\}$ in the same batch is weightedly propagated and ensembled to form a better soft targets for distillation on-the-fly. Note that $x^\text{anchor}$ and $\{x_1, x_2, x_3, \dots\}$ are fed into the same network.</figcaption>
 </figure>
       <!-- </div> -->
 
@@ -102,7 +110,7 @@
 
 
        <div class="section implementation">
-	<h2>Implementation <a href="https://github.com/yxgeee/BAKE" target="search_iframe">[Full Code]</a></h2>
+	<h2>Pseudo Code <a href="https://github.com/yxgeee/BAKE" target="search_iframe">[Full Code]</a></h2>
 	<figure>
   <center><img src="./bake/code.png" alt="Trulli" style="width:50%"></center>
 </figure>
@@ -123,7 +131,7 @@
  <div class="section examples">
 	<h2>Soft Target Examples on ImageNet</h2>
 	<figure>
-  <center><img src="./bake/examples.png" alt="Trulli" style="width:90%"></center><br>
+  <center><img src="./bake/examples.png" alt="Trulli" style="width:100%"></center><br>
   <figcaption>Fig. 5 - We sample three tuples of images (four images in each tuple) from three batches to show the soft targets produced by <b>BAKE</b>. The images are sampled from ImageNet. "GT" denotes the manually annotated ground-truth labels. The knowledge of samples from the same batch is propagated and ensembled to form a better soft learning target for each sample in the batch. Note that only the top-3 classes of soft targets with the highest probabilities are illustrated for brevity.</figcaption>
 </figure>
       </div>
