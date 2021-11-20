@@ -4,7 +4,7 @@
 
 <!-- Meta tags for search engines to crawl -->
 <meta name="robots" content="index,follow">
-<meta name="description" content="The recent studies of knowledge distillation have discovered that ensembling the 'dark knowledge' from multiple teachers or students contributes to creating better soft targets for training, but at the cost of significantly more computations and/or parameters. In this work, we present BAtch Knowledge Ensembling (BAKE) to produce refined soft targets for anchor images by propagating and ensembling the knowledge of the other samples in the same mini-batch. Specifically, for each sample of interest, the propagation of knowledge is weighted in accordance with the inter-sample affinities, which are estimated on-the-fly with the current network. The propagated knowledge can then be ensembled to form a better soft target for distillation. In this way, our BAKE framework achieves online knowledge ensembling across multiple samples with only a single network. It requires minimal computational and memory overhead compared to existing knowledge ensembling methods. Extensive experiments demonstrate that the lightweight yet effective BAKE consistently boosts the classification performance of various architectures on multiple datasets, e.g., a significant +1.2% gain of ResNet-50 on ImageNet with only +3.7% computational overhead and zero additional parameters. BAKE does not only improve the vanilla baselines, but also surpasses the single-network state-of-the-arts on all the benchmarks.">
+<meta name="description" content="The recent studies of knowledge distillation have discovered that ensembling the 'dark knowledge' from multiple teachers or students contributes to creating better soft targets for training, but at the cost of significantly more computations and/or parameters. In this work, we present BAtch Knowledge Ensembling (BAKE) to produce refined soft targets for anchor images by propagating and ensembling the knowledge of the other samples in the same mini-batch. Specifically, for each sample of interest, the propagation of knowledge is weighted in accordance with the inter-sample affinities, which are estimated on-the-fly with the current network. The propagated knowledge can then be ensembled to form a better soft target for distillation. In this way, our BAKE framework achieves online knowledge ensembling across multiple samples with only a single network. It requires minimal computational and memory overhead compared to existing knowledge ensembling methods. Extensive experiments demonstrate that the lightweight yet effective BAKE consistently boosts the classification performance of various architectures on multiple datasets, e.g., a significant +0.7% gain of Swin-T on ImageNet with only +1.5% computational overhead and zero additional parameters. BAKE does not only improve the vanilla baselines, but also surpasses the single-network state-of-the-arts on all the benchmarks.">
 <meta name="keywords" content="Representation Learning; Image Classification; Computer Vision; Deep Learning">
 <link rel="author" href="https://yxgeee.github.io/">
 
@@ -34,13 +34,15 @@
 
 	<div class="authors">
 	  <a href="https://yxgeee.github.io/">Yixiao Ge</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="https://scholar.google.com/citations?user=1uIAXh0AAAAJ">Ching Lam Choi</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="https://scholar.google.com/citations?user=xImPgj4AAAAJ">Xiao Zhang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    Peipei Zhao<sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <!-- <br> -->
+    <a href="https://scholar.google.com/citations?user=1uIAXh0AAAAJ">Ching Lam Choi</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Ka Chun Cheung<sup>3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Peipei Zhao<sup>5</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
     <a href="http://home.ustc.edu.cn/~zhufengx/">Feng Zhu</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="http://www.ee.cuhk.edu.hk/~xgwang/">Xiaogang Wang</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	  <a href="http://zhaorui.xyz/">Rui Zhao</a><sup>4</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>1,2,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  <a href="http://www.ee.cuhk.edu.hk/~hsli/">Hongsheng Li</a><sup>1,2</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</div>
 
 	<div class="affiliations">
@@ -48,9 +50,10 @@
 	  <br>
       2. Centre for Perceptual and Interactive Intelligence (CPII)&nbsp;&nbsp;&nbsp;&nbsp;
 	  <br>
-      3. <a href="https://cs.xidian.edu.cn/English/Home.htm">School of CST, Xidian University</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	  <!-- <br> -->
+      3. <a href="https://www.nvidia.com/en-us/">NVIDIA</a>&nbsp;&nbsp;&nbsp;&nbsp;
       4. <a href="https://www.sensetime.com/en/">SenseTime Research</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      5. <a href="https://cs.xidian.edu.cn/English/Home.htm">School of CST, Xidian University</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	</div>
 
   <!-- <div class="venue">Conference on Neural Information Processing Systems (<a href="https://nips.cc/" target="_blank">NeurIPS</a>) 2020 </div> -->
@@ -81,7 +84,7 @@
 <ul>
 <li>We for the first time introduce to produce ensembled soft targets for self-distillation without using multiple networks or additional network branches.</li><br>
 <li>We propose a novel <b>BA</b>tch <b>K</b>nowledge <b>E</b>nsembling (<b>BAKE</b>) mechanism to online refine the distillation targets with the cross-sample knowledge, <i>i.e.</i>, weightedly aggregating the knowledge from other samples in the same batch (see <b>(c)</b>).</li><br>
-<li>Our method is simple yet consistently effective on improving classification performances of various networks and datasets with <mark>minimal computational overhead and zero additional parameters</mark>, <i>e.g.</i>, a significant <b>+1.2%</b> gain of ResNet-50 on ImageNet with only <b>+3.7%</b> computational overhead.</li>
+<li>Our method is simple yet consistently effective on improving classification performances of various networks and datasets with <mark>minimal computational overhead and zero additional parameters</mark>, <i>e.g.</i>, a significant <b>+0.7%</b> gain of Swin-T on ImageNet with only <b>+1.5%</b> computational overhead.</li>
 </ul>
 	<!-- <p>
     The recent studies of knowledge distillation have discovered that ensembling the "dark knowledge" from multiple teachers (see <b>(a)</b>) or students (see <b>(b)</b>) contributes to creating better soft targets for training, but at the cost of significantly more computations and/or parameters. In this work, we present <b>BA</b>tch <b>K</b>nowledge <b>E</b>nsembling (<b>BAKE</b>) to produce refined soft targets for anchor images by propagating and ensembling the knowledge of the other samples in the same mini-batch (see <b>(c)</b>). Specifically, for each sample of interest, the propagation of knowledge is weighted in accordance with the inter-sample affinities, which are estimated on-the-fly with the current network. The propagated knowledge can then be ensembled to form a better soft target for distillation. In this way, our BAKE framework achieves online knowledge ensembling across multiple samples with only a single network. It requires minimal computational and memory overhead compared to existing knowledge ensembling methods. Extensive experiments demonstrate that the lightweight yet effective BAKE consistently boosts the classification performance of various architectures on multiple datasets, <i>e.g.</i>, a significant <mark><b>+1.2%</b></mark> gain of ResNet-50 on ImageNet with only <mark>+3.7%</mark> computational overhead and <mark>zero</mark> additional parameters. BAKE does not only improve the vanilla baselines, but also surpasses the single-network state-of-the-arts on all the benchmarks.
@@ -123,6 +126,10 @@
    <figure>
   <center><img src="./bake/results.png" alt="Trulli" style="width:50%"></center><br>
   <figcaption>Fig. 4 - <b>BAKE</b> improves various architectures with minimal computational overhead. We report the top-1 accuracy (%) on ImageNet. "Vanilla" indicates training with a conventional cross-entropy loss. The time consumption is counted on 8 Titan X GPUs. Please refer to our paper for more results.</figcaption>
+</figure>
+<figure>
+  <center><img src="./bake/results_swin.png" alt="Trulli" style="width:50%"></center><br>
+  <figcaption>Fig. 4 - <b>BAKE</b> improves vision transformers with various scales in terms of the top-1 accuracy (%) on ImageNet. The time consumption is counted on 8 V100 GPUs. Please refer to our paper for more results.</figcaption>
 </figure>
       </div>
 
