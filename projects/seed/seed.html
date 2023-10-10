@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <link rel="icon" type="image/png" href="./img/icon.png">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <style>
+        iframe {
+            height: 75vh;
+            width: 100%;
+            /* or any width you prefer */
+            border: none;
+        }
+    </style>
+
+    <title>Planting a SEED of Vision in Large Language Model</title>
+
+    <meta name="description" content="RT-X">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <base href="/"> -->
+
+    <!--FACEBOOK-->
+    <meta property="og:image" content="./img/overview.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="2040">
+    <meta property="og:image:height" content="642">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seed-x.github.io/"/>
+    <meta property="og:title" content="Planting a SEED of Vision in Large Language Model" />
+    <meta property="og:description"
+        content="Project page for Planting a SEED of Vision in Large Language Model." />
+
+    <!--TWITTER-->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Planting a SEED of Vision in Large Language Model" />
+    <meta name="twitter:description"
+        content="Project page for Planting a SEED of Vision in Large Language Model." />
+    <meta name="twitter:image" content="./img/overview.png" />
+
+
+    <!--     <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-52J0PM8XKV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-52J0PM8XKV');
+    </script>
+
+
+    <style>
+        .nav-pills {
+            position: relative;
+            display: inline;
+        }
+
+        .author {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+        .author .affiliation {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+            width: 120px;
+            top: 100%;
+            left: 50%;
+            margin-left: -60px;
+            /* Use half of the width (120/2 = 60), to center the tooltip */
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .author:hover .affiliation {
+            visibility: visible;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .video-wrapper {
+            flex: 1;
+            margin-right: 2px;
+            margin-left: 2px;
+            max-width: calc(33.33%px);
+            /* 33.33% for 3 videos per row, subtracting margins */
+            height: auto;
+            text-align: center;
+        }
+
+        .video {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .caption {
+            margin-top: 0px;
+        }
+
+        .image-container {
+            display: flex;
+            flex-direction: row;
+            /* Arrange items horizontally */
+            justify-content: space-between;
+            /* Spread items horizontally */
+            align-items: flex-end;
+            /* Align items at the bottom */
+        }
+
+        .image-container .image-wrapper {
+            flex: 1;
+            /* Distribute equal width to both images */
+            padding: 10px;
+            /* Add some spacing between images */
+        }
+
+        .image-container img {
+            max-width: 100%;
+            /* Constrain image width */
+            height: auto;
+            /* Maintain image aspect ratio */
+            display: block;
+            /* Remove extra space below inline images */
+            margin: 0 auto;
+            /* Center the images within their containers */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <h2 class="col-md-12 text-center">
+                <strong>
+                  <font size="+6">Planting a <span class="rainbow-gradient">SEED</span> of Vision in Large Language Model</font>
+            </h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12 text-center">
+
+                <!-- <br>
+                For any inquiries, please email <a href="mailto:seed-x@googlegroups.com">seed-x@googlegroups.com</a>
+                <br> -->
+                <ul class="list-inline">
+                    <br>
+                    <li class="author" data-affiliation="Tencent AI Lab"><a href="https://geyuying.github.io/">Yuying Ge*</a></li>
+                    <li class="author" data-affiliation="Tencent ARC Lab, Tencent AI Lab"><a href="https://geyixiao.com/">Yixiao Ge*&#128231;</a></li>
+                    <li class="author" data-affiliation="Tencent ARC Lab, Tsinghua University"><a href="https://stdkonjac.icu/">Ziyun Zeng</a></li>
+                    <li class="author" data-affiliation="Tencent ARC Lab, Tencent AI Lab"><a href="https://xinntao.github.io/">Xintao Wang</a></li>
+                    <li class="author" data-affiliation="Tencent ARC Lab, Tencent AI Lab"><a href="https://scholar.google.com/citations?user=4oXBp9UAAAAJ&hl=en">Ying Shan</a></li>
+
+                <br>
+                    <a href="https://ai.tencent.com/">
+                    <image src="img/ailab.png" height="37px"> </a>
+                      &nbsp; &nbsp; &nbsp;
+                    <a href="https://arc.tencent.com/">
+                    <image src="img/ARC.svg" height="80px"> </a>
+                <br>
+                For any inquiries, please email <a href="mailto:seed-x@googlegroups.com">seed-x@googlegroups.com</a>
+                <br><br>
+                </ul>
+            </div>
+
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <ul class="nav nav-pills nav-justified">
+
+                    <li>
+                        <a href="https://arxiv.org/abs/2307.08041">
+                            <image src="img/seed_1st_page.png" height="60px">
+                                <h4><strong>Tech Report</strong></h4>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://github.com/AILab-CVC/SEED">
+                            <image src="img/github.png" height="60px">
+                                <h4><strong>Code & Models</strong></h4>
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Features</b>
+                </h3>
+
+                <p>
+                  <span class="css-rainbow-text"><b>[16 July 2023]</b></span>&nbsp;
+                  xxx
+                  <!-- We are excited to unveil
+                  <span style="background-color: rgb(131, 253, 131)">SEED-LLaMA</span>,
+                  which offers unified multimodal comprehension and generation capabilities,
+                  featuring multi-turn in-context emergent capabilities, akin to an AI aide.
+                  SEED-LLaMA is empowered by the SEED-2 tokenizer with improved visual semantics.
+                  <br>
+                  <ul>
+                    <li>Links:
+                      <a target="_blank" href="">Project Page</a>,
+                      <a target="_blank" href="https://arxiv.org/abs/2310.01218">Tech Report</a>,
+                      <a target="_blank" href="https://github.com/AILab-CVC/SEED">Code & Models</a>
+                    </li>
+                    <li>Features:
+                    </li>
+                  </ul> -->
+                </p>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Abstract</b>
+                </h3>
+                <!-- <img src="img/seed_overview.jpg" class="img-responsive"></img> -->
+
+                <p><span class="css-rainbow-text">SEED</span> xxx
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Model Overview</b>
+                </h3>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Results</b>
+                </h3>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Citation</b>
+                </h3>
+                <div class="section bibtex">
+<pre>
+@article{ge2023planting,
+  title={Planting a seed of vision in large language model},
+  author={Ge, Yuying and Ge, Yixiao and Zeng, Ziyun and Wang, Xintao and Shan, Ying},
+  journal={arXiv preprint arXiv:2307.08041},
+  year={2023}
+}</pre>
+              	  </div>
+                  <p>
+                    Get to know more about our <a href="./index.html">Project SEED</a>.
+                  </p>
+
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h3>
+                    <b>Acknowledgements</b>
+                </h3>
+
+                <!-- <p>
+                    Our core contributors include Chen Li, Kun Yi, Sijie Zhao, Xiaohan Ding, Xintao Wang,
+                    Ying Shan, Yixiao Ge, and Yuying Ge,
+                    as well as the present or previous interns, Bohao Li, Jinguo Zhu, Xiaohu Jiang, and Ziyun Zeng
+                     (names listed in alphabetical order).
+                    Sincere thanks for their efforts.
+                    We would also like to thank Zhengyou Zhang, Dong Yu, and Yu Zeng for their great help and valuable suggestions.
+                </p> -->
+
+                <p>
+                    <!-- <br><br> -->
+                    The website template was borrowed from <a href="https://robotics-transformer-x.github.io/">Open X-Embodiment</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        const authors = document.querySelectorAll('.author');
+
+        authors.forEach(author => {
+            // Get the affiliation from the data-affiliation attribute
+            const affiliation = author.getAttribute('data-affiliation');
+
+            // Create a new span element with the class "affiliation"
+            const span = document.createElement('span');
+            span.className = 'affiliation';
+            span.textContent = `${affiliation}`;
+
+            // Append the span to the author element
+            author.appendChild(span);
+        });
+    </script>
+</body>
+
+</html>
