@@ -19,6 +19,7 @@
 
 	<!-- Theme CSS -->
 	<link id="theme-style" rel="stylesheet" href="assets/css/devresume.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 
 </head>
 
@@ -51,7 +52,7 @@
 						<img class="resume-profile-image mb-3 mb-md-0 mr-md-5 ml-md-0 rounded mx-auto" src="images/yxge_2023.JPG" alt="image">
 						<div class="media-body text-left">
 							<p class="mb-0">
-								I am currently a senior researcher at <a href="https://arc.tencent.com/en/index" target="_blank">Tencent ARC Lab</a> and <a href="https://ai.tencent.com/ailab/en/index" target="_blank">Tencent AI Lab</a>, leading an effort on <b>vision and multimodal foundation models</b>.
+								I am currently a senior researcher at <a href="https://arc.tencent.com/en/index" target="_blank">Tencent ARC Lab</a> and <a href="https://ai.tencent.com/ailab/en/index" target="_blank">Tencent AI Lab</a>, leading an effort on <b>multimodal foundation models and open-world visual comprehension</b>.
 				                Previously, I got my Ph.D. degree from <a href="http://mmlab.ie.cuhk.edu.hk/" target="_blank">Multimedia Lab (MMLab)</a>, <a href="http://www.cuhk.edu.hk/english/index.html" target="_blank">the Chinese University of Hong Kong</a>,
 				                advised by <a href="http://www.ee.cuhk.edu.hk/~hsli/" target="_blank">Prof. Hongsheng Li</a> and <a href="http://www.ee.cuhk.edu.hk/~xgwang/" target="_blank">Prof. Xiaogang Wang</a>.
 				                <!-- Previously, I received the B.Eng. degree from <a href="http://english.hust.edu.cn/" target="_blank">Huazhong University of Science and Technology</a>. -->
@@ -60,7 +61,10 @@
 				                <!-- large-scale pre-training, un/self-/semi-/weakly-supervised learning, image/video/cross-modality representation learning, transfer learning, etc. -->
 								<!-- <font color="#3366CC">[<a href="https://scholar.google.com/citations?user=TtU74NAAAAAJ&hl=en">Google Scholar</a>]</font> -->
 								<!-- <br> -->
+							<!-- </p><br> -->
+							<!-- <p> -->
 								<font color="#CC0033">We are actively looking for self-motivated interns to work on related research topics. Please feel free to reach out if you are interested.</font>
+								<!-- <br><br> -->
 							</p>
 						</div><!--//media-body-->
 					</div>
@@ -70,9 +74,13 @@
 					<div class="row">
 						<div class="resume-main col-12 col-lg-8 col-xl-9 pr-0 pr-lg-5">
 							<section class="work-section py-3">
-								<h3 class="text-uppercase resume-section-heading mb-4">News</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4">News: </h3>
+								
 								<div class="item mb-3">
 									<div class="item-content">
+										<p>
+											<b><span class="css-rainbow-text">Welcome to check out our SEED</span> (<a href = "https://ailab-cvc.github.io/seed/" target="_blank">[Project Page]</a>)!</b>
+										</p>
 										<ul class="resume-list" style="list-style: outside;list-style-type: square;">
 											<li> <b>[Oct 2023]</b> Excited to unveil <a href = "https://github.com/AILab-CVC/SEED" target="_blank">SEED-LLaMA</a>, featuring multi-turn in-context emergent capabilities.</li>
 											<li> <b>[Sep 2023]</b> Three papers are accepted to NeurIPS 2023.</li>
@@ -107,6 +115,63 @@
 									</div>
 								</div><!--//item-->
 
+							</section><!--//work-section-->
+
+							<section class="work-section py-3">
+								<h3 class="text-uppercase resume-section-heading mb-4">Selected Projects</h3>
+								<div class="item mb-3">
+									<div class="item-content">
+										<p>
+											<font color="#39AB56"><b>Multimodal Foundation Models:</b></font>
+											<!-- <br> -->
+											<ul>
+												<li>
+													<p><b>Vision-language:</b>
+													We aim to develop foundational models that unify visual comprehension and generation tasks within one framework. </p>
+													<p>Given the great success of Large Language Models (LLMs), we take the initial step to empower the off-the-shelf LLMs with the ability to perform visual tasks via plugins (<a href = "https://gpt4tools.github.io/" target="_blank">GPT4Tools @NeurIPS23</a>). Despite a feasible solution, it is far from multimodal emergent abilities. </p>
+													<p>We are further devoted to developing an end-to-end framework that facilitates flexible input/output formats, transitioning and reasoning seamlessly between multimodal signals while acquiring knowledge from an inherently multimodal world. Check out our <a href = "https://ailab-cvc.github.io/seed/" target="_blank"><b>SEED</b></a> for details. </p>
+													<p>Previously, we focused on pre-training vision-language representations and video-text retrieval, e.g., <a href="https://arxiv.org/abs/2201.04850" target="_blank">MCQ @CVPR22(Oral)</a>, <a href="https://arxiv.org/abs/2203.07303" target="_blank">All-in-One @CVPR23</a>. We also made some interesting applications like <a href="https://tuneavideo.github.io/" target="_blank">Tune-A-Video @ICCV23</a>.</p>
+												</li>
+												<li>
+													<p><b>Omni-modal:</b>
+													A real AI agent (e.g., a smart robot) should be capable of sensing all modalities. It is non-trivial, especially for those rare modalities. Check out our solution, namely, <a href = "https://arxiv.org/abs/2308.10185" target="_blank">ViT-Lens</a>. Omni-modal representation has great potential in emergent applications, see our <a href = "https://arxiv.org/abs/2306.16934" target="_blank">DreamDiffusion</a>.</p>
+												</li>
+												<li>
+													<p><b>Data-centric:</b>
+													High-quality and large-scale data is the prerequisite for training foundation models. For training data, we collect large-scale TV dramas (<a href = "https://ptvd.github.io/#" target="_blank">PTVD</a>, Tencent Video authorization), as well as memes (<a href = "https://arxiv.org/abs/2306.06870" target="_blank">Sticker820K</a>, Tencent Search authorization). Besides, we are also focusing on properly evaluating multimodal LLMs, proposing <a href = "https://github.com/AILab-CVC/SEED-Bench" target="_blank">SEED-Bench</a> (<a href="https://huggingface.co/spaces/AILab-CVC/SEED-Bench_Leaderboard" target="_blank">[leaderboard]</a>).
+													</p>
+												</li>
+											</ul>
+										</p>
+										<p>
+											<font color="#39AB56"><b>Open-world Visual Comprehension:</b></font>
+											<ul>
+												<li>
+													<p><b>Visual representation:</b>
+													We are committed to improving image representation (e.g., <a href = "https://arxiv.org/abs/2203.15371" target="_blank">mc-BEiT @ECCV22</a>, <a href = "https://openreview.net/pdf?id=1fZd4owfJP6" target="_blank">ConMIM @ICLR23</a>, <a href = "https://arxiv.org/abs/2301.06958" target="_blank">RILS @CVPR23</a>) and video representation (e.g., <a href = "https://arxiv.org/abs/2209.15280" target="_blank">TVTS @CVPR23</a>, <a href = "https://arxiv.org/abs/2305.14173" target="_blank">TVTSv2</a>) via large-scale pre-training.
+													</p>
+												</li>
+												<li>
+													<p><b>Visual perception:</b>
+													We also tackle the challenge of visual perception tasks, for instance, detection and segmentation. Check out our <a href = "https://arxiv.org/abs/2204.02964" target="_blank">MIMDet @ICCV23</a>, <a href = "https://arxiv.org/abs/2303.11630" target="_blank">BoxSnake @ICCV23</a>.</p>
+												</li>
+											</ul>
+										</p>
+										<p>
+											<font color="#39AB56"><b>Efficient AI:</b></font>
+											<ul>
+												<p>
+													<!-- Efficient (green) AI is an important task in industry.  -->
+													We have created a new topic of hot-refresh <b>model upgrades</b> (<a href = "https://openreview.net/pdf?id=HTp-6yLGGX" target="_blank">RACT @ICLR22</a>) for large-scale retrieval systems, which is practical in industry and under-explored in academia. Beyond retrieval, upgrading the foundation models in current AI systems is also costly because all downstream modules need to be retrained to adapt. Check out our <a href = "https://arxiv.org/abs/2306.12642" target="_blank">TaCA</a> for a solution.
+													We are also interested in <b>model selection</b> (<a href = "https://arxiv.org/abs/2207.03036" target="_blank">SFDA @ECCV22</a>, <a href = "https://arxiv.org/abs/2308.15074" target="_blank">PED @ICCV23</a>), <b>binarization</b> (<a href = "https://arxiv.org/abs/2302.08714" target="_blank">BEBR @KDD23</a>), etc. 
+												</p>
+												<p>
+													Our algorithms helped Tencent effectively reduce costs and increase efficiency. We won the highest technical award within the company and the <a href="https://www.szccf.org.cn/?p=4198" target="_blank">SZCCF Science and Technology Award</a>.
+												</p>
+											</ul>
+										</p>
+									</div>
+								</div><!--//item-->
 
 							</section><!--//work-section-->
 
@@ -127,8 +192,9 @@
 										</font>
 										<br>
 										<br>
-
+										<p>
 										<font color="#39AB56"><b>Selected Preprints:</b></font>
+										</p>
 										<ul class="resume-list" style="list-style: outside;" >
 
 											<li>
@@ -142,6 +208,7 @@
 													Yuying Ge*, Sijie Zhao*, Ziyun Zeng, <b>Yixiao Ge<sup>#</sup></b>, Chen Li, Xintao Wang, Ying Shan
 												</div>
 												<div class="resume-degree-org text-muted">
+													[<a href = "https://ailab-cvc.github.io/seed/seed_llama.html" target="_blank">Project</a>]
 													[<a href = "https://arxiv.org/abs/2310.01218" target="_blank">Tech Report</a>]
 													[<a href = "https://github.com/AILab-CVC/SEED" target="_blank">Code</a>]
 													<img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/AILab-CVC/SEED?style=social">
@@ -159,6 +226,7 @@
 													Yuying Ge*, <b>Yixiao Ge*<sup>#</sup></b>, Ziyun Zeng, Xintao Wang, Ying Shan
 												</div>
 												<div class="resume-degree-org text-muted">
+													[<a href = "https://ailab-cvc.github.io/seed/seed.html" target="_blank">Project</a>]
 													[<a href = "https://arxiv.org/abs/2307.08041" target="_blank">Tech Report</a>]
 													[<a href = "https://github.com/AILab-CVC/SEED" target="_blank">Code</a>]
 													<img alt="GitHub stars" style="vertical-align:middle" src="https://img.shields.io/github/stars/AILab-CVC/SEED?style=social">
@@ -347,7 +415,9 @@
 											</li> -->
 										</ul>
 
+										<p>
 										<font color="#39AB56"><b>2023:</b></font>
+										</p>
 										<ul class="resume-list" style="list-style: outside;" >
 
 											<li>
@@ -604,7 +674,9 @@
 											</li>
 										</ul>
 
+										<p>
 										<font color="#39AB56"><b>2022:</b></font>
+										</p>
 										<ul class="resume-list" style="list-style: outside;" >
 
 
@@ -767,7 +839,9 @@
 
 										</ul>
 
+										<p>
 										<font color="#39AB56"><b>2021:</b></font>
+										</p>
 										<ul class="resume-list" style="list-style: outside;" >
 
 											<li>
@@ -839,7 +913,10 @@
 												</div>
 											</li>
 										</ul>
+
+										<p>
 										<font color="#39AB56"><b>2020:</b></font>
+										</p>
 										<ul class="resume-list" style="list-style: outside;" >
 
 											<li>
@@ -891,7 +968,9 @@
 											</li>
 										</ul>
 
+										<p>
 										<font color="#39AB56"><b>Before 2020:</b></font>
+										</p>
 										<ul class="resume-list" style="list-style: outside;" >
 
 											<li>
